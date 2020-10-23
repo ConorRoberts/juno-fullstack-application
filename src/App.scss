@@ -1,0 +1,50 @@
+.App {
+  $orange:#ff4822;
+  $white:#ffffff;
+  $black:#000000;
+  $grey:#999999;
+  background-color:$grey;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  h1{
+    font-size:42px;
+    font-weight:500; 
+  }
+  p{
+    font-weight:400;
+    font-size:19px;
+  }
+
+  .film-list{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    width:50%;
+  }
+  .film-container{
+    width:100%;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    border:1px solid $black;
+    padding:1rem;
+    margin:1rem;
+    color:$black;
+    transition:background-color 300ms;
+    background-color:$orange;
+    border-radius:15px;
+    &:hover{
+      background-color:rgba($orange, 0.505);
+    }
+
+    .film-properties > *{
+      padding:1rem 0;
+    }
+  }
+  
+  .tiff-image{
+    width:10vw;
+  }
+}
+
