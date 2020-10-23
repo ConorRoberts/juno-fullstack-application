@@ -31,7 +31,7 @@ function Film(props) {
         <div className="film-properties">
           <p>{props.overview}</p>
           <p>Genres: {genreStrings.join(", ")}</p>
-          <p>Runtime: {props.runTime}</p>
+          <p>Runtime: {props.runTime}min</p>
           {props.tagline && <p>Tagline: {props.tagline}</p>}
           <p><strong>Actors and their other movies:</strong></p>
           {props.actors && Object.entries(props.actors).map(actor=>actor[1] && <p>{actor[0]}: {actor[1]}</p>)}
