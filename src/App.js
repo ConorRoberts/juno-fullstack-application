@@ -16,7 +16,7 @@ function Film(props) {
 
   const genreStrings = props.genres.map(genre => genre.name);
 
-  console.log(props.obj);
+  // console.log(props.obj);
   return (
     <div onClick={()=>setOpen(!isOpen)} className="film-container">
       <h1>
