@@ -1,5 +1,5 @@
 .App {
-  background-color: #999999;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -22,16 +22,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  border: 1px solid #000000;
+  border: 3px solid #ff4822;
   padding: 1rem;
   margin: 1rem;
   color: #000000;
   transition: background-color 300ms;
-  background-color: #ff4822;
-  border-radius: 15px;
+  background-color: #999999;
 }
 .App .film-container:hover {
-  background-color: rgba(255, 72, 34, 0.505);
+  background-color: rgba(255, 72, 34, 0.205);
 }
 .App .film-container .film-reel {
   width: 100px;
