@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/juno-fullstack-application/static/css/main.cb44903c.chunk.css",
+    "main.js": "/juno-fullstack-application/static/js/main.bd850799.chunk.js",
+    "main.js.map": "/juno-fullstack-application/static/js/main.bd850799.chunk.js.map",
+    "runtime-main.js": "/juno-fullstack-application/static/js/runtime-main.c6aa4c71.js",
+    "runtime-main.js.map": "/juno-fullstack-application/static/js/runtime-main.c6aa4c71.js.map",
+    "static/js/2.14ef758f.chunk.js": "/juno-fullstack-application/static/js/2.14ef758f.chunk.js",
+    "static/js/2.14ef758f.chunk.js.map": "/juno-fullstack-application/static/js/2.14ef758f.chunk.js.map",
+    "index.html": "/juno-fullstack-application/index.html",
+    "static/css/main.cb44903c.chunk.css.map": "/juno-fullstack-application/static/css/main.cb44903c.chunk.css.map",
+    "static/js/2.14ef758f.chunk.js.LICENSE.txt": "/juno-fullstack-application/static/js/2.14ef758f.chunk.js.LICENSE.txt",
+    "static/media/noun_Movie_1241202.8da9f150.svg": "/juno-fullstack-application/static/media/noun_Movie_1241202.8da9f150.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c6aa4c71.js",
+    "static/js/2.14ef758f.chunk.js",
+    "static/css/main.cb44903c.chunk.css",
+    "static/js/main.bd850799.chunk.js"
+  ]
+}
