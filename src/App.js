@@ -16,7 +16,7 @@ function Film(props) {
   const [isOpen, setOpen] = useState(false);
 
   const genreStrings = props.genres.map((genre) => genre.name);
-  
+
   return (
     <div onClick={() => setOpen(!isOpen)} className="film-container">
       <div className="title-container">
@@ -33,6 +33,8 @@ function Film(props) {
           <p>Genres: {genreStrings.join(", ")}</p>
           <p>Runtime: {props.runTime}</p>
           {props.tagline && <p>Tagline: {props.tagline}</p>}
+          <p><strong>Actors and their other movies:</strong></p>
+          {props.actors && Object.entries(props.actors).map(actor=>actor[1] && <p>{actor[0]}: {actor[1]}</p>)}
         </div>
       )}
     </div>
@@ -88,8 +90,25 @@ class FilmList extends Component {
           );
           const movieData = await movieResult.json();
 
+          const castResult= await fetch(
+            `
+            https://api.themoviedb.org/3/movie/${movie.id}/credits?api_key=${key}`
+          )
+          const castData=await castResult.json();
+          
           if (movie.popularity >= 10) {
-            // Combining previous array and current arr details to update state
+
+            movieData.cast=castData.cast;
+            movieData.actors_known={};
+            movieData.cast.forEach(async(cast)=>{
+              const creditResult = await fetch (
+                `https://api.themoviedb.org/3/credit/${cast.credit_id}?api_key=${key}`
+              );
+              const creditData = await creditResult.json();
+              creditData.person.known_for.forEach(credit=>cast.known=credit.title);
+              movieData.actors_known[cast.name]=cast.known;
+            });
+
             arr = this.state.movies.concat(movieData);
 
             // Update state
@@ -111,11 +130,11 @@ class FilmList extends Component {
           )
           .map((movie) => (
             <Film
+              actors={movie.actors_known}
               overview={movie.overview}
               title={movie.title}
               genres={movie.genres}
               release={movie.release_date}
-              obj={movie}
               runTime={movie.runtime}
               tagline={movie.tagline}
             />
